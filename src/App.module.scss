@@ -1,0 +1,36 @@
+body {
+    overflow: hidden;
+}
+
+.left, .right {
+    cursor: pointer;
+    margin: 0 50px;
+    position: fixed;
+    content: ' ';
+    display: block;
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    top: 50%;
+    
+    border-right:10px solid black;
+    transform: scaleY(0.5) scale(3) translate(30%, 15%);
+}
+
+.right {
+    right: 0;
+    transform: rotate(180deg) scaleY(0.5) scale(3) translate(30%, -15%);
+}
+
+main {
+    transition: transform 500ms ease;
+    white-space: nowrap;
+
+    & > article {
+        display: inline-block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
