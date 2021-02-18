@@ -16,5 +16,13 @@ module.exports = {
         // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
         '@typescript-eslint/explicit-module-boundary-types': 'off',
     },
-    ignorePatterns: ['public', 'scripts', 'config', 'node_modules', 'src/serviceWorker.ts', 'src/reportWebVitals.ts'],
+    ignorePatterns: [
+        'public',
+        'scripts',
+        'config',
+        'node_modules',
+        'src/serviceWorker.ts',
+        'src/reportWebVitals.ts',
+        'src/setupTests.ts',
+    ],
 }
