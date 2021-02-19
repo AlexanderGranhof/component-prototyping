@@ -38,8 +38,7 @@ const SlideShow: FunctionComponent = (props) => {
 const App = () => {
     return (
         <SlideShow>
-            <Input label="yes" value={2} />
-            <Input label="yes" value={2} />
+            <Input label="Username" type="text" placeholder="JohnDoe" optional />
         </SlideShow>
     )
 }
