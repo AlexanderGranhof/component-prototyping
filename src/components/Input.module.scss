@@ -1,0 +1,28 @@
+.input {
+    font-family: sans-serif;
+    margin-top: 1.5em;
+
+    label {
+        display: block;
+        margin: 0.5em 0;
+        font-weight: bold;
+    }
+
+    input {
+        transition: all 120ms ease;
+        border: 1px solid black;
+        padding: 1em;
+        font-size: 1em;
+        outline: none;
+        border-radius: 2px;
+
+        &:focus {
+            border-color: #ff7900;
+        }
+    }
+
+    .optional {
+        font-size: 0.8em;
+        opacity: 0.8;
+    }
+}
