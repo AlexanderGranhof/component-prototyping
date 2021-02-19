@@ -17,12 +17,12 @@ export type InputProps = {
 }
 
 const Input: FunctionComponent<InputProps> = (props) => {
-    const [value, setValue] = useState<string>((props.value ?? '')?.toString())
+    const [value, setValue] = useState<string>((props.value ?? '').toString())
     const optionalText = props.optionalText ?? 'optional'
 
     // If the prop value is changed, we update the local value state
     useEffect(() => {
-        setValue((props.value ?? '')?.toString())
+        setValue((props.value ?? '').toString())
     }, [props.value])
 
     const onEnter = (event: React.KeyboardEvent<HTMLInputElement>) => {
