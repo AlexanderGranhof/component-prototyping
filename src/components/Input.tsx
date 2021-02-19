@@ -9,6 +9,7 @@ export type InputProps = {
     name?: string
     label?: string
     optional?: boolean
+    placeholder?: string
     optionalText?: string
     onEnter?: (value: string) => void
     onChange?: React.DOMAttributes<HTMLInputElement>['onChange']
@@ -44,6 +45,7 @@ const Input: FunctionComponent<InputProps> = (props) => {
                 {props.label} {props.optional && <span className={styles['optional']}>{optionalText}</span>}
             </label>
             <input
+                placeholder={props.placeholder}
                 value={value}
                 onChange={onChange}
                 onKeyDown={onEnter}
