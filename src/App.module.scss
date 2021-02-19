@@ -3,6 +3,7 @@ body {
 }
 
 .left, .right {
+    z-index: 100000;
     cursor: pointer;
     margin: 0 50px;
     position: fixed;
@@ -26,11 +27,23 @@ body {
 main {
     transition: transform 500ms ease;
     white-space: nowrap;
+    height: 100vh;
 
     & > article {
+        height: inherit;
         display: inline-block;
         width: 100%;
         margin: 0;
         padding: 0;
+
+        & > div {
+            height: inherit;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            
+        }
     }
 }

@@ -1,7 +1,9 @@
-import React, { useRef, useState } from 'react'
+import React, { FunctionComponent, useRef, useState } from 'react'
 import styles from './App.module.scss'
 
-const App = () => {
+import Input from './components/Input'
+
+const SlideShow: FunctionComponent = (props) => {
     const [offset, setOffset] = useState(0)
     const mainRef = useRef<HTMLElement>(null)
 
@@ -21,17 +23,23 @@ const App = () => {
             <span onClick={() => createOffset(1)} className={styles['left']}></span>
             <span onClick={() => createOffset(-1)} className={styles['right']}></span>
             <main ref={mainRef} style={{ transform: `translateX(${offset}px)` }}>
-                <article>
-                    <h1>Component 1</h1>
-                </article>
-                <article>
-                    <h1>Component 2</h1>
-                </article>
-                <article>
-                    <h1>Component 3</h1>
-                </article>
+                {React.Children.map(props.children, (child) => {
+                    return (
+                        <article>
+                            <div>{child}</div>
+                        </article>
+                    )
+                })}
             </main>
         </React.Fragment>
+    )
+}
+
+const App = () => {
+    return (
+        <SlideShow>
+            <Input label="Username" type="text" placeholder="JohnDoe" optional />
+        </SlideShow>
     )
 }
 
